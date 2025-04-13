@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝙶𝚁𝙾𝙾𝙺 𝙿𝚁𝙴𝙳𝙸𝙲𝚃𝙾𝚁 𝚅1.0</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes radar-sweep {
+            0% { transform: rotate(0deg); opacity: 1; }
+            100% { transform: rotate(360deg); opacity: 0; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes rotateNumbers {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .radar-animation { animation: radar-sweep 3s linear infinite; }
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        .prediction-circle { animation: rotateNumbers 20s linear infinite; }
+        .cyber-glow { text-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white"><!-- Security Restrictions -->
+    <script 
+        data-disable-devtool-auto
+        data-disable-menu='true'
+        data-disable-select='true'
+        data-disable-copy='true'
+        data-disable-cut='true'
+        data-disable-paste='true'
+        src='https://cdn.jsdelivr.net/npm/disable-devtool'>
+    </script>
+    <div class="min-h-screen p-4 flex flex-col items-center">
+        <!-- Main Dashboard -->
+        <div class="w-full max-w-md" id="mainDashboard">
+            <!-- User Profile Card -->
+            <div class="bg-gray-800 border border-gray-700 rounded-lg mb-6 p-6">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+                    <div>
+                        <h2 class="text-blue-400 font-bold text-xl">𝙰𝙸 𝙿𝚛𝚎𝚍𝚒𝚌𝚝𝚒𝚟𝚎 𝙰𝚗𝚊𝚕𝚢𝚝𝚒𝚌𝚜</h2>
+                        <div class="flex items-center mt-1">
+                            <span class="text-gray-300">Session ID: 𝙶𝚁𝙾𝙾𝙺-𝚅1-2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Selection -->
+            <div class="space-y-4">
+                <!-- Aviator Card -->
+                <div onclick="showAviatorPredictor()" 
+                     class="bg-gray-800 border border-blue-500 hover:border-blue-400 transition-colors cursor-pointer rounded-lg p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg">𝗔𝗩𝗜𝗔𝗧𝗢𝗥 𝗣𝗥𝗘𝗗𝗜𝗖𝗧𝗢𝗥</h3>
+                            <p class="text-gray-400 text-sm">𝚁𝙴𝙰𝙻-𝚃𝙸𝙼𝙴 𝙼𝚄𝙻𝚃𝙸𝙿𝙻𝙸𝙴𝚁 𝙰𝙽𝙰𝙻𝚈𝚂𝙸𝚂</p>
+                        </div>
+                        <i data-lucide="activity" class="text-blue-400 w-6 h-6"></i>
+                    </div>
+                </div>
+
+                <!-- Other Game Cards -->
+                <!-- Add other game cards here following same pattern -->
+            </div>
+        </div>
+
+        <!-- Aviator Predictor Section -->
+        <div id="aviatorPredictor" class="hidden w-full max-w-md">
+            <div class="border border-blue-500/30 rounded-xl p-6">
+                <!-- Back Button -->
+                <button onclick="showMainDashboard()" 
+                        class="text-blue-400 hover:text-blue-300 mb-4 flex items-center">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                    Back to Dashboard
+                </button>
+
+                <!-- Prediction Interface -->
+                <div class="text-center space-y-6">
+                    <!-- Animated Prediction Circle -->
+                    <div class="relative w-64 h-64 mx-auto">
+                        <div class="prediction-circle absolute inset-0 rounded-full border-4 border-blue-500/20">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl text-blue-400">1.2X</div>
+                            <div class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 text-xl text-blue-400">3.8X</div>
+                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 text-xl text-blue-400">2.4X</div>
+                            <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 text-xl text-blue-400">5.0X</div>
+                        </div>
+                        
+                        <!-- Center Display -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 bg-blue-900/30 rounded-full flex items-center justify-center">
+                                <span id="currentPrediction" class="text-3xl font-bold text-blue-400">--X</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Status -->
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="p-3 bg-gray-700 rounded-lg">
+                            <p class="text-gray-400">Accuracy Rating</p>
+                            <p class="font-bold text-green-400">98.7%</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded-lg">
+                            <p class="text-gray-400">𝙰𝙸 𝙰𝚗𝚊𝚕𝚢𝚜𝚒𝚜</p>
+                            <p class="font-bold text-purple-400">𝙰𝙲𝚃𝙸𝚅𝙴</p>
+                        </div>
+                    </div>
+
+                    <!-- Progress System -->
+                    <div class="pt-4">
+                        <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                            <div class="w-2/3 h-full bg-gradient-to-r from-blue-600 to-purple-600 animate-pulse"></div>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2">System Optimization: 85%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation Functions
+        function showAviatorPredictor() {
+            document.getElementById('mainDashboard').classList.add('hidden');
+            document.getElementById('aviatorPredictor').classList.remove('hidden');
+            startPredictions();
+        }
+
+        function showMainDashboard() {
+            document.getElementById('aviatorPredictor').classList.add('hidden');
+            document.getElementById('mainDashboard').classList.remove('hidden');
+            stopPredictions();
+        }
+
+        // Prediction Engine
+        let predictionInterval;
+        const predictions = ['1.2X', '1.5X', '2.0X', '2.8X', '3.4X', '4.2X', '5.0X'];
+        
+        function generatePrediction() {
+            return predictions[Math.floor(Math.random() * predictions.length)];
+        }
+
+        function updatePrediction() {
+            const element = document.getElementById('currentPrediction');
+            element.textContent = generatePrediction();
+            element.style.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        }
+
+        function startPredictions() {
+            updatePrediction();
+            predictionInterval = setInterval(updatePrediction, 
+                Math.floor(Math.random() * 5000 + 10000)); // 10-15 seconds
+        }
+
+        function stopPredictions() {
+            clearInterval(predictionInterval);
+        }
+
+        // Initialize
+        lucide.createIcons();
+    </script>
+</body>
+</html>

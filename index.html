@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗚𝗥𝗢𝗢𝗞 𝗣𝗥𝗘𝗗𝗜𝗖𝗧𝗢𝗥</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white"><!-- Security Restrictions -->
+    <script 
+        data-disable-devtool-auto
+        data-disable-menu='true'
+        data-disable-select='true'
+        data-disable-copy='true'
+        data-disable-cut='true'
+        data-disable-paste='true'
+        src='https://cdn.jsdelivr.net/npm/disable-devtool'>
+    </script>
+    <div class="min-h-screen p-4 flex flex-col items-center">
+        <!-- User Profile Card -->
+        <div class="w-full max-w-md bg-gray-800 border border-gray-700 rounded-lg mb-6">
+            <div class="p-6 flex items-center space-x-4">
+                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+                <div>
+                    <h2 class="text-blue-400 font-bold text-xl">Welcome Back!</h2>
+                    <div class="flex items-center mt-1">
+                        <span class="text-gray-300">User ID: 382547371323426</span>
+                        <button onclick="copyUserId()" class="ml-2 text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="text-gray-300">𝗚𝗮𝗺𝗯𝗹𝗶𝗻𝗴 𝗖𝗮𝗻 𝗕𝗲 𝗔𝗱𝗱𝗶𝗰𝘁𝗲𝗱, 𝗣𝗹𝗲𝗮𝘀𝗲 𝗣𝗹𝗮𝘆 𝗥𝗮𝘁𝗶𝗼𝗻𝗮𝗹𝗹𝘆. </p>
+                </div>
+            </div>
+            <div class="px-6 pb-6">
+                <button onclick="window.location.href='/Wallet/'" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                    𝗚𝗥𝗢𝗢𝗞 𝗔𝗜 𝗣𝗥𝗘𝗗𝗜𝗖𝗧𝗢𝗥
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Selection -->
+        <div class="w-full max-w-md" id="gameContainer">
+            <h2 class="text-xl font-bold text-center mb-4">𝐒𝐄𝐋𝐄𝐂𝐓 𝐓𝐇𝐄 𝐆𝐀𝐌𝐄</h2>
+            
+            <!-- Main Games -->
+            <div id="mainGames">
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Wingo Card -->
+                    <div onclick="showPlatforms()" class="bg-gray-800 border border-blue-500 hover:border-blue-400 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg flex items-center">
+                                    𝚆𝙸𝙽𝙶𝙾
+                                    <span class="bg-blue-900 text-blue-200 px-2 py-0.5 rounded-full text-xs ml-2">
+                                        𝙿𝙾𝙿𝚄𝙻𝙰𝚁
+                                    </span>
+                                </h3>
+                                <p class="text-gray-400 text-sm">𝙾𝚙𝚎𝚗 𝚆𝚒𝚗𝚐𝚘 𝙶𝚊𝚖𝚎</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 w-6 h-6">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- K3 Wingo Card -->
+                    <div onclick="window.location.href='Grookk3wingo.html'" class="bg-gray-800 border border-gray-700 hover:border-gray-600 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">𝙺3 𝚆𝙸𝙽𝙶𝙾</h3>
+                                <p class="text-gray-400 text-sm">𝙾𝚙𝚎𝚗 𝙺3 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 w-6 h-6">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Mines Card -->
+                    <div onclick="window.location.href='Grookmines.html'" class="bg-gray-800 border border-gray-700 hover:border-gray-600 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">𝙼𝙸𝙽𝙴𝚂𝚆𝙴𝙴𝙿𝙴𝚁</h3>
+                                <p class="text-gray-400 text-sm">𝙾𝚙𝚎𝚗 𝙼𝚒𝚗𝚎𝚜𝚠𝚎𝚎𝚙𝚎𝚛 𝙶𝚊𝚖𝚎</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 w-6 h-6">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Aviator Card -->
+                    <div onclick="window.location.href='grookavaitor.html'" class="bg-gray-800 border border-gray-700 hover:border-gray-600 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">𝙰𝚅𝙸𝙰𝚃𝙾𝚁 𝙶𝙰𝙼𝙴</h3>
+                                <p class="text-gray-400 text-sm">𝙾𝚙𝚎𝚗 𝙰𝚟𝚒𝚊𝚝𝚘𝚛 𝙶𝚊𝚖𝚎</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 w-6 h-6">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platforms (hidden by default) -->
+            <div id="platforms" class="hidden">
+                <button onclick="backToGames()" class="mb-4 text-blue-400 hover:text-blue-300 bg-transparent border-none cursor-pointer">
+                    ← 𝐁𝐀𝐂𝐊 𝐓𝐎 𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃
+                </button>
+
+                <h1 class="text-2xl font-bold text-center text-blue-400 mb-6">𝗪𝗜𝗡𝗚𝗢 𝗚𝗔𝗠𝗘 𝗣𝗟𝗔𝗧𝗙𝗢𝗥𝗠𝗦</h1>
+
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- Platform Cards -->
+                    <div onclick="window.location.href='jalwaregister1.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">𝙹𝙰𝙻𝚆𝙰 𝙶𝙰𝙼𝙴</h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 30 𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="window.location.href='jalwaregister.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">𝙹𝙰𝙻𝚆𝙰 𝙶𝙰𝙼𝙴</h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 1 𝙼𝚒𝚗𝚞𝚝𝚎𝚜 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="window.location.href='7lotteryregister1.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">7 𝙻𝙾𝚃𝚃𝙴𝚁𝚈 𝙶𝙰𝙼𝙴</h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 30 𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="window.location.href='7lotteryregister.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">7 𝙻𝙾𝚃𝚃𝙴𝚁𝚈 𝙶𝙰𝙼𝙴 </h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 1 𝙼𝚒𝚗𝚞𝚝𝚎𝚜 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="window.location.href='tashanregister1.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">𝚃𝙰𝚂𝙷𝙰𝙽 𝙶𝙰𝙼𝙴</h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 30 𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="window.location.href='tashanregister.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">𝚃𝙰𝚂𝙷𝙰𝙽 𝙶𝙰𝙼𝙴</h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 1 𝙼𝚒𝚗𝚞𝚝𝚎𝚜 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="window.location.href='tirangaregister1.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">𝚃𝙸𝚁𝙰𝙽𝙶𝙰 𝙶𝙰𝙼𝙴</h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 1 𝚂𝚎𝚌𝚘𝚗𝚍𝚜 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="window.location.href='tirangaregister.html'" class="bg-gradient-to-r from-blue-600/80 to-purple-600/80 hover:from-blue-500/80 hover:to-purple-500/80 transition-colors cursor-pointer rounded-lg">
+                        <div class="p-4 flex items-center">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-lg w-12 h-12 mr-4"></div>
+                            <div>
+                                <h2 class="font-bold text-lg text-white">𝚃𝙸𝚁𝙰𝙽𝙶𝙰 𝙶𝙰𝙼𝙴 ( 𝚅𝙸𝙿 ) </h2>
+                                <p class="text-blue-100 text-sm">𝙾𝚙𝚎𝚗 1 𝙼𝚒𝚗𝚞𝚝𝚎 𝚆𝚒𝚗𝚐𝚘</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copied Notification -->
+        <div id="copiedNotification" class="hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800/90 text-white px-4 py-2 rounded-md shadow-lg backdrop-blur-sm">
+            𝗨𝘀𝗲𝗿 𝗜𝗱 𝗖𝗼𝗽𝗶𝗲𝗱 !
+        </div>
+    </div>
+
+    <script>
+        function copyUserId() {
+            navigator.clipboard.writeText('382547371323426');
+            const notification = document.getElementById('copiedNotification');
+            notification.classList.remove('hidden');
+            notification.classList.add('fade-in');
+            setTimeout(() => {
+                notification.classList.add('hidden');
+                notification.classList.remove('fade-in');
+            }, 2000);
+        }
+
+        function showPlatforms() {
+            document.getElementById('mainGames').classList.add('hidden');
+            document.getElementById('platforms').classList.remove('hidden');
+        }
+
+        function backToGames() {
+            document.getElementById('mainGames').classList.remove('hidden');
+            document.getElementById('platforms').classList.add('hidden');
+        }
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

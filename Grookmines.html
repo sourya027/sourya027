@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINESWEEPER PREDICTOR</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .grid-cell {
+            aspect-ratio: 1;
+            background: #374151;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .grid-cell:hover {
+            background: #4b5563;
+        }
+        .star {
+            background: #3f6212 !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white"><!-- Security Restrictions -->
+    <script 
+        data-disable-devtool-auto
+        data-disable-menu='true'
+        data-disable-select='true'
+        data-disable-copy='true'
+        data-disable-cut='true'
+        data-disable-paste='true'
+        src='https://cdn.jsdelivr.net/npm/disable-devtool'>
+    </script>
+    <div class="min-h-screen p-4 flex flex-col items-center">
+        <!-- Back Button -->
+        <button onclick="window.location.href='/'" class="self-start mb-4 text-blue-400 hover:text-blue-300">
+            ← Back to Dashboard
+        </button>
+
+        <!-- Game Container -->
+        <div class="w-full max-w-md">
+            <h1 class="text-2xl font-bold text-center mb-6 text-blue-400">𝗠𝗜𝗡𝗘𝗦𝗪𝗘𝗘𝗣𝗘𝗥 𝗣𝗥𝗘𝗗𝗜𝗖𝗧𝗢𝗥</h1>
+            
+            <!-- Seed Input -->
+            <div class="mb-6">
+                <input type="number" 
+                       id="serverSeedsInput" 
+                       placeholder="ENTER UID"
+                       class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500">
+            </div>
+
+            <!-- Buttons -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button id="resultButton" 
+                        class="p-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition">
+                    RESULT
+                </button>
+                <button id="resetButton" 
+                        class="p-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition">
+                    CLEAR
+                </button>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="gridContainer" class="grid-container"></div>
+
+            <!-- Result Display -->
+            <div id="resultDisplay" class="result text-center mt-6 text-gray-300"></div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize grid
+        const gridContainer = document.getElementById('gridContainer');
+        const resultDisplay = document.getElementById('resultDisplay');
+        
+        // Create 5x5 grid
+        for (let i = 0; i < 25; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'grid-cell';
+            gridContainer.appendChild(cell);
+        }
+
+        // Seeded random number generator
+        function* seededRandom(seed) {
+            let value = seed;
+            while(true) {
+                value = (value * 9301 + 49297) % 233280;
+                yield value / 233280;
+            }
+        }
+
+        function placeStars() {
+            const cells = Array.from(gridContainer.children);
+            const seed = parseInt(document.getElementById('serverSeedsInput').value) || Date.now();
+            const random = seededRandom(seed);
+            
+            resetGrid();
+            
+            const indices = new Set();
+            while (indices.size < 5) {
+                const randomValue = Math.floor(random.next().value * 25);
+                indices.add(randomValue);
+            }
+
+            indices.forEach(index => {
+                cells[index].classList.add('star');
+                cells[index].textContent = '🌟';
+            });
+
+            resultDisplay.textContent = `Prediction generated for UID: ${seed}`;
+        }
+
+        function resetGrid() {
+            const cells = Array.from(gridContainer.children);
+            cells.forEach(cell => {
+                cell.classList.remove('star');
+                cell.textContent = '';
+            });
+            resultDisplay.textContent = '';
+        }
+
+        // Event Listeners
+        document.getElementById('resultButton').addEventListener('click', placeStars);
+        document.getElementById('resetButton').addEventListener('click', () => {
+            document.getElementById('serverSeedsInput').value = '';
+            resetGrid();
+        });
+
+        // Initialize lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
